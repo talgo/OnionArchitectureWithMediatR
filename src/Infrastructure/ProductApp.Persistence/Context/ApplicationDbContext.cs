@@ -11,6 +11,10 @@ namespace ProductApp.Persistence.Context
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Product> Products { get; set; }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> dbContextOptions) : base(dbContextOptions)
+        {
+
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,13 +27,13 @@ namespace ProductApp.Persistence.Context
                     Value = 10.5m,
                 }, new Product()
                 {
-                    Id = 1,
+                    Id = 2,
                     Name = "Test2",
                     Quantity = 10,
                     Value = 10.5m,
                 }, new Product()
                 {
-                    Id = 1,
+                    Id = 3,
                     Name = "Test3",
                     Quantity = 5,
                     Value = 10.5m,

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProductApp.Application.Wrappers
 {
-    internal class BaseResponse
+    public class BaseResponse
     {
         public int Id { get; set; }
-        public bool IsSucces { get; set; }
+        public bool IsSucces => Message == null || Message == "";
         public string Message { get; set; }
     }
 }
